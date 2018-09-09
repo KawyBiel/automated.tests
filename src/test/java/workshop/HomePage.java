@@ -4,7 +4,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class HomePage extends BasePage {
 
@@ -63,12 +65,21 @@ public class HomePage extends BasePage {
     public void clickOnLinks() {
         for (WebElement s: linkList) {
             s.click();
-            String currentSitesUrl = this.driver.getCurrentUrl();
+
+            String title = driver.getTitle();
+            assertTrue(title.contains("Coders"));
+            assertFalse(title.contains("Error"));
+
             driver.navigate().back();
         }
-
-
     }
+
+    public void clickOnLinkOpeningNewWindow() {
+        this.codersLab.click();
+    }
+
+
+
 
 
 
