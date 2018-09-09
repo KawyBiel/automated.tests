@@ -1,9 +1,10 @@
 package workshop;
 
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
+
+import static org.junit.Assert.assertFalse;
 
 public class HomePage extends BasePage {
 
@@ -15,18 +16,59 @@ public class HomePage extends BasePage {
     @FindBy (xpath="/html/body/section[1]/div/div[1]/a/img")
     private WebElement homePageLink;
 
+    @FindBy (xpath="/html/body/section[1]/div/div[2]/nav/ul/li[1]/a")
+    private WebElement howItWorksLink;
+
+    @FindBy (xpath="/html/body/section[1]/div/div[2]/nav/ul/li[2]/a")
+    private WebElement pricelist;
+
+    @FindBy (xpath="/html/body/section[1]/div/div[2]/nav/ul/li[3]/a")
+    private WebElement beAMentor;
+
+    @FindBy (name="button")
+    private WebElement logInButton;
+
+    @FindBy (xpath="/html/body/section[3]/div/form/input[2]")
+    private WebElement registerButton;
+
+
+    @FindBy (xpath="/html/body/footer/div/div[1]/a[1]")
+    private WebElement regulations;
+
+    @FindBy (xpath="/html/body/footer/div/div[1]/a[2]")
+    private WebElement howItWorksButtom;
+
+
+    @FindBy (xpath="/html/body/footer/div/div[2]/a/img")
+    private WebElement fb;
+
+
+
+    @FindBy (xpath="/html/body/footer/div/legal/a")
+    private WebElement codersLab;
 
     //konstruktor dziedziczony z klasy BasePage:
-    public HomePage(Webdriver driver) {
+    public HomePage(WebDriver driver) {
         super(driver);
     }
 
-
     //dostęp do lokatorów gwarantuje metoda public
-    public void enterEmail() {
-
+    public void enterEmail(String email) {
+        this.emailTextBox.clear();
+        this.emailTextBox.sendKeys(email);
     }
 
+    WebElement[] linkList = new WebElement[]{homePageLink, howItWorksLink, pricelist, beAMentor, logInButton, registerButton, regulations, howItWorksButtom, fb};
+
+    public void clickOnLinks() {
+        for (WebElement s: linkList) {
+            s.click();
+            String currentSitesUrl = this.driver.getCurrentUrl();
+            driver.navigate().back();
+        }
+
+
+    }
 
 
 
