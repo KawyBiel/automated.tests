@@ -5,12 +5,15 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
 
-public class NewPrivateUserTest extends BaseTest{
-    @Given("^I open website coders guru$")
+public class NewCompanyUserTest extends BaseTest{
+  /*  @Given("^I open website coders guru$")
         public void iOpenWebsiteCodersGuru(){
         BaseTest.setUp();
         driver.get("https://men-men-s-01.codersguru.pl/");
@@ -31,8 +34,6 @@ public class NewPrivateUserTest extends BaseTest{
 
         assertEquals("active", registration.isPrivatePersonSelected ());//metoda zwraca Stringa z nazwą klasy
     }
-
-
 
     @And("^I enter email \"([^\"]*)\"$")
     public void iEnterEmail(String mail) {
@@ -84,8 +85,33 @@ public class NewPrivateUserTest extends BaseTest{
         assertTrue(driver.getCurrentUrl().contains ("confirmed"));
 
         assertEquals(registration.getLoggedUserName(), name);
+
+    }
+*/
+
+    @And("^I select company user$")
+    public void iSelectCompanyUser()  {
+        RegistrationPage registration = new RegistrationPage(driver);
+        registration.clickCompanyButton();
     }
 
+    @And("^I provide company name \"([^\"]*)\"$")
+    public void iProvideCompanyName(String company)  {
+        RegistrationPage registration = new RegistrationPage(driver);
+        registration.enterCompany(company);
+    }
+
+    @And("^I provide NIP number$")
+    public void iProvideNIPNumber() {
+        WebDriver helpDriver = new FirefoxDriver();
+        helpDriver.get("http://generatory.it/");
+        String generatedNip = helpDriver.findElement(By.id ("nipBox")).getText();
+        helpDriver.close ();
+
+        RegistrationPage registration = new RegistrationPage(driver);
+        registration.typeNip(generatedNip);
+
+        }
 
 }
 
