@@ -78,6 +78,10 @@ public class HomePage extends BasePage {
         this.codersLab.click();
     }
 
+    public void goToRegistrationPage() {
+        registerButton.click();
+
+    }
 
 
 

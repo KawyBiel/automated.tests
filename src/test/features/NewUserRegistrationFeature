@@ -1,0 +1,26 @@
+Feature: Register new private user
+
+  Scenario Outline: create new private user
+
+    Given I open website coders guru
+    When I click on registration page
+  And I select private user
+  And I enter email <mail>
+  And I enter name <name> surname <surname>
+  And I provide password <pw>
+  And I provide address <city> <zip> <street> <no>
+  And I check that I have read the terms
+  And I click registration button
+
+    Then User should be successfully created
+
+
+
+    Examples:
+      | mail | name | surname | pw | city | zip | street | no |
+      | tester@gmail.com | Jan | Kowalski | OddajMojeStoBaniek | Wrocław | 54-520 | Rzeźnicza | 44 |
+      | test@test2.com | Anna | Nowak | NieOddam | Gdansk | 59-985 | Rybacka | 4 |
+
+
+
+
