@@ -49,8 +49,8 @@ public class PayUPageObject extends BasePage {
     }
 
     public String displayIncorrectCardNoMessage(){
-        String message = incorrectCardNoMessage.getText();
-        return message;
+        String messageText = incorrectCardNoMessage.getText();
+        return messageText;
     }
 
 }

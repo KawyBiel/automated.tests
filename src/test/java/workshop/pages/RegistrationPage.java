@@ -21,7 +21,7 @@ public class RegistrationPage extends BasePage {
     @FindBy(id="fos_user_registration_form_lastname")
     private WebElement surnameTextBox;
     @FindBy(xpath = "//*[@id=\"registration-main-form\"]/div[4]/span")
-    private WebElement surnameErrorMassage;;  //Wprowadzona wartość jest mniejsza niż 2 znaków
+    private WebElement surnameErrorMassage;  //Wprowadzona wartość jest mniejsza niż 2 znaków
     @FindBy(id="fos_user_registration_form_plainPassword_first")
     private WebElement passwordTextBox;
     @FindBy(xpath = "//*[@id=\"registration-main-form\"]/div[5]/span")
@@ -76,8 +76,8 @@ public class RegistrationPage extends BasePage {
     }
 
     public String isPrivatePersonSelected() {
-        String className = personButtomLink.getAttribute("class");
-        return className;
+        String clasName = personButtomLink.getAttribute("class");
+        return clasName;
     }
 
     public void enterMail(String mail) {
@@ -141,8 +141,8 @@ public class RegistrationPage extends BasePage {
     }
 
     public String getLoggedUserName() {
-        String loggedUser = loggedUserName.getText ();
-        return loggedUser;
+        String loggedInUser = loggedUserName.getText ();
+        return loggedInUser;
     }
 
     public void typeNip(String nip) {

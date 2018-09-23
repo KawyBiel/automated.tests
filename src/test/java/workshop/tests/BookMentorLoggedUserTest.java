@@ -62,7 +62,7 @@ public class BookMentorLoggedUserTest extends BaseTest{
     }
 
     @Then("^payment should be rejected$")
-    public void paymentShouldBeRejected() throws Throwable {
+    public void paymentShouldBeRejected() {
         PayUPageObject payUPageObject = new PayUPageObject(driver);
 
         assertEquals("Nieprawidłowy numer karty." , payUPageObject.displayIncorrectCardNoMessage());
