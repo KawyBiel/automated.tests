@@ -1,4 +1,4 @@
-package workshop;
+package workshop.tests;
 
 import org.junit.After;
 import org.junit.AfterClass;

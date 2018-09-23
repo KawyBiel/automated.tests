@@ -1,8 +1,9 @@
-package workshop;
+package workshop.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import workshop.pages.BasePage;
 
 public class PayUPageObject extends BasePage {
 
@@ -31,6 +32,8 @@ public class PayUPageObject extends BasePage {
     @FindBy(name = "submit")
     private WebElement payButton;
 
+    @FindBy(xpath = "/html/body/div/div/div[2]/main/div[2]/article/div[1]/form/div[1]/label/span")
+    private WebElement incorrectCardNoMessage;
 
     public void payByCreditCard() {
         creditCardBox.click();
@@ -44,4 +47,10 @@ public class PayUPageObject extends BasePage {
         emailBox.sendKeys(email);
         payButton.click();
     }
+
+    public String displayIncorrectCardNoMessage(){
+        String message = incorrectCardNoMessage.getText();
+        return message;
+    }
+
 }

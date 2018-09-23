@@ -1,10 +1,13 @@
-package workshop;
+package workshop.tests;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import workshop.pages.LogInPage;
+import workshop.pages.PayUPageObject;
+
+import static junit.framework.TestCase.assertEquals;
 
 public class BookMentorLoggedUserTest extends BaseTest{
 
@@ -60,10 +63,9 @@ public class BookMentorLoggedUserTest extends BaseTest{
 
     @Then("^payment should be rejected$")
     public void paymentShouldBeRejected() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException ();
+        PayUPageObject payUPageObject = new PayUPageObject(driver);
+
+        assertEquals("Nieprawidłowy numer karty." , payUPageObject.displayIncorrectCardNoMessage());
     }
-
-
 
 }

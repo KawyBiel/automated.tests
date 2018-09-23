@@ -1,6 +1,7 @@
-package workshop;
+package workshop.tests;
 
 import org.junit.Test;
+import workshop.pages.HomePage;
 
 
 import static org.junit.Assert.assertFalse;
