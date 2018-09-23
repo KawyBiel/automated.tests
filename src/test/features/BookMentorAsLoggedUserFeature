@@ -1,0 +1,14 @@
+Feature: Book mentor as logged user
+
+Scenario: log in and book a mentor
+
+Given I open login website coders guru
+When I log in as "testerssi7@gmail.com" user with password "OddajMojeStoBaniek"
+And I select from the dropdown "GIT" and click find a mentor
+And I pick 1st mentor from the list
+And I enter possible date and time and write problem description "Nie umiem gita" and go to payment
+And I pick credit card payment
+And I provide CC data as "1234 5678 9999 987" "11/2020" "123" "Jan Kowalski" "trelele@gmail.com"
+
+
+Then payment should be rejected

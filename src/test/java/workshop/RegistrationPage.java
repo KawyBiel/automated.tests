@@ -80,71 +80,73 @@ public class RegistrationPage extends BasePage {
     }
 
     public void enterMail(String mail) {
-        this.emailTextBox.clear();
-        this.emailTextBox.sendKeys(mail);
+        emailTextBox.clear();
+        emailTextBox.sendKeys(mail);
     }
 
     public void enterName (String name) {
-        this.nameTextBox.clear();
-        this.nameTextBox.sendKeys(name);
+        nameTextBox.clear();
+        nameTextBox.sendKeys(name);
     }
 
     public void enterSurname(String surname) {
-        this.surnameTextBox.clear();
-        this.surnameTextBox.sendKeys(surname);
+        surnameTextBox.clear();
+        surnameTextBox.sendKeys(surname);
     }
 
     public void enterPassword (String pw) {
-        this.passwordTextBox.clear();
-        this.passwordTextBox.sendKeys(pw);
-        this.passwordRepeatTextBox.clear();
-        this.passwordRepeatTextBox.sendKeys(pw);
+        passwordTextBox.clear();
+        passwordTextBox.sendKeys(pw);
+        passwordRepeatTextBox.clear();
+        passwordRepeatTextBox.sendKeys(pw);
     }
 
     public void enterCity(String city) {
-        this.cityTextBox.clear();
-        this.cityTextBox.sendKeys (city);
+        cityTextBox.clear();
+        cityTextBox.sendKeys (city);
     }
 
     public void enterZip (String zip) {
-        this.zipCodeTextBox.clear ();
-        this.zipCodeTextBox.sendKeys (zip);
+        zipCodeTextBox.clear ();
+        zipCodeTextBox.sendKeys (zip);
     }
 
     public void enterStreet (String street) {
-        this.streetTextBox.clear ();
-        this.streetTextBox.sendKeys (street);
+        streetTextBox.clear ();
+        streetTextBox.sendKeys (street);
     }
 
     public void enterNumber (String no) {
-        this.streetNumberTextBox.clear ();
-        this.streetNumberTextBox.sendKeys (no);
+        streetNumberTextBox.clear ();
+        streetNumberTextBox.sendKeys (no);
     }
 
     public void enterCompany (String company) {
-        this.companyName.clear ();
-        this.companyName.sendKeys(company);
+        companyName.clear ();
+        companyName.sendKeys(company);
     }
 
 
 
 
     public void clickOnCheckBox() {
-        this.statuteCheckBox.click ();
+
+        statuteCheckBox.click ();
     }
 
     public void clickRegister() {
-        this.registerSubmitBotton.click ();
+
+        registerSubmitBotton.click ();
     }
 
     public String getLoggedUserName() {
-        String loggedUser = this.loggedUserName.getText ();
+        String loggedUser = loggedUserName.getText ();
         return loggedUser;
     }
 
     public void typeNip(String nip) {
-        this.nipNumber.clear();
-        this.nipNumber.sendKeys(nip);
+        nipNumber.clear();
+        nipNumber.sendKeys(nip);
     }
 
 
