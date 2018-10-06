@@ -5,6 +5,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
@@ -41,8 +43,11 @@ public class FlightSelectionPage extends BasePage {
     @FindBy(id = "bookbtn")
     private List<WebElement> bookNowButtons;
 
-
     public void enterDepartureAndArrival(String from, String to, String dateFrom, String dateTo){
+
+        WebDriverWait wait = new WebDriverWait (driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(roundTripCheck));
+
         roundTripCheck.click();
 
         departureBoxToClick.click();

@@ -24,10 +24,8 @@ public class InvoicePage extends BasePage{
     public void takeScreenshot() { //zapisuje plik ze screenshotem na pulpicie z aktualnym czasem
         String data = new SimpleDateFormat ("yyyy.MM.dd-HH:mm:ss").format(Calendar.getInstance().getTime());
 
-
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.visibilityOf(downloadInvoiceButton));
-
 
         File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 
