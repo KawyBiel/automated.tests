@@ -1,7 +1,8 @@
-package workshop.tests;
+package codersguru.tests;
 
+import common.BaseTest;
 import org.junit.Test;
-import workshop.pages.HomePage;
+import codersguru.pages.HomePage;
 
 public class EnterEmailTest extends BaseTest {
 

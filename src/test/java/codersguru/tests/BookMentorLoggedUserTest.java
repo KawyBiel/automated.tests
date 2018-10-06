@@ -1,11 +1,12 @@
-package workshop.tests;
+package codersguru.tests;
 
+import common.BaseTest;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import workshop.pages.LogInPage;
-import workshop.pages.PayUPageObject;
+import codersguru.pages.LogInPage;
+import codersguru.pages.PayUPageObject;
 
 import static junit.framework.TestCase.assertEquals;
 
@@ -67,5 +68,4 @@ public class BookMentorLoggedUserTest extends BaseTest{
 
         assertEquals("Nieprawidłowy numer karty." , payUPageObject.displayIncorrectCardNoMessage());
     }
-
 }

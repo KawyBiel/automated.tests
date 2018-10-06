@@ -1,9 +1,9 @@
-package workshop.pages;
+package codersguru.pages;
 
+import common.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
-import workshop.pages.BasePage;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -50,7 +50,6 @@ public class HomePage extends BasePage {
     @FindBy (xpath="/html/body/footer/div/legal/a")
     private WebElement codersLab;
 
-    //konstruktor dziedziczony z klasy BasePage:
     public HomePage(WebDriver driver) {
         super(driver);
     }

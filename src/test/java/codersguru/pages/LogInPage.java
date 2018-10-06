@@ -1,9 +1,9 @@
-package workshop.pages;
+package codersguru.pages;
 
+import common.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import workshop.pages.BasePage;
 
 public class LogInPage extends BasePage {
 

@@ -1,4 +1,4 @@
-package workshop.pages;
+package common;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 public class BasePage {
     //stworzenie instancji driver'a
 
-    protected WebDriver driver;
+    protected static WebDriver driver;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
