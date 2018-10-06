@@ -46,8 +46,9 @@ public class FlightSelectionPage extends BasePage {
 
     public void enterDepartureAndArrival(String from, String to, String dateFrom, String dateTo){
 
-        WebDriverWait wait = new WebDriverWait (driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(roundTripCheck));
+        // test nie działa z wait - sprawdzić
+        // WebDriverWait wait = new WebDriverWait (driver, 20);
+        // wait.until(ExpectedConditions.elementToBeClickable(roundTripCheck));
 
         roundTripCheck.click();
 
