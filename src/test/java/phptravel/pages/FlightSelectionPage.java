@@ -78,6 +78,10 @@ public class FlightSelectionPage extends BasePage {
     }
 
     public void pickFlight(int number) {
+
+        //funkcja document.readyState; jeśli "complete", to znaczy, że strona załadowana
+        new WebDriverWait(driver, 60).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
+
         bookNowButtons.get(number).click();
     }
 }

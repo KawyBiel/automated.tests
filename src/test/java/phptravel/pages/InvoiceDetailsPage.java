@@ -40,9 +40,8 @@ public class InvoiceDetailsPage extends BasePage{
     private WebElement confirmBookingButton;
 
     public void enterInvoiceDetails(String firstname, String lastname, String email, String mobile, String city, String country) {
-
-        //document.readyState to funkcja JS; jeśli zwraca "complete", to strona załadowana
-        new WebDriverWait(driver, 60).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        wait.until(ExpectedConditions.visibilityOf(firstNameOnInvoice));
 
         firstNameOnInvoice.sendKeys(firstname);
         lastNameOnInvoice.sendKeys(lastname);
